@@ -2,7 +2,7 @@
   <div id="header" >
     <!-- <transition name="fadenav"> -->
     <Menu v-if="screenWidth > 900" :style="{visibility: screenWidth > 900 ? 'visible' : 'hidden'}" theme="light" :mode="hMode" @on-select="handleRoute" :active-name="activeMenu" class="oj-menu">
-      <Menu-item class="home_bar" name="/" ><router-link to="/">COU</router-link></Menu-item>
+      <Menu-item class="home_bar" name="/" ><router-link to="/">해커톤</router-link></Menu-item>
       <Menu-item class="bar_list" name="/problem">
         <router-link to="/problem">문제</router-link>
       </Menu-item>
