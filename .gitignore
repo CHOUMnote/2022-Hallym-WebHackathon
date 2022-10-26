@@ -1,0 +1,17 @@
+.DS_Store
+app.tar
+z_deploy
+/**/.DS_Store
+data/judge_server
+data/postgres
+data/redis
+data/backend/config/*
+data/backend/log/*
+data/backend/public/website/*
+data/backend/public/avatar/*
+data/backend/public/contestimgs/*
+data/backend/test_case/*
+data/backend/ssl/*
+data/backend/public/upload/*
+appseds
+dist.zip
