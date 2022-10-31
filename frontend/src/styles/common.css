@@ -1,0 +1,328 @@
+/* Color */
+/* Font size */
+/* Font weight */
+/* Size */
+/* Annimation */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200;
+  src: url('~@/assets/fonts/manrope-v13-latin-200.eot');
+  /* IE9 Compat Modes */
+  src: local(''), url('~@/assets/fonts/manrope-v13-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('~@/assets/fonts/manrope-v13-latin-200.woff2') format('woff2'), /* Super Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-200.woff') format('woff'), /* Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */ url('~@/assets/fonts/manrope-v13-latin-200.svg#Manrope') format('svg');
+  /* Legacy iOS */
+}
+/* manrope-regular - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: url('~@/assets/fonts/manrope-v13-latin-regular.eot');
+  /* IE9 Compat Modes */
+  src: local(''), url('~@/assets/fonts/manrope-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('~@/assets/fonts/manrope-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-regular.woff') format('woff'), /* Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('~@/assets/fonts/manrope-v13-latin-regular.svg#Manrope') format('svg');
+  /* Legacy iOS */
+}
+/* manrope-500 - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  src: url('~@/assets/fonts/manrope-v13-latin-500.eot');
+  /* IE9 Compat Modes */
+  src: local(''), url('~@/assets/fonts/manrope-v13-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('~@/assets/fonts/manrope-v13-latin-500.woff2') format('woff2'), /* Super Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-500.woff') format('woff'), /* Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */ url('~@/assets/fonts/manrope-v13-latin-500.svg#Manrope') format('svg');
+  /* Legacy iOS */
+}
+/* manrope-300 - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  src: url('~@/assets/fonts/manrope-v13-latin-300.eot');
+  /* IE9 Compat Modes */
+  src: local(''), url('~@/assets/fonts/manrope-v13-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('~@/assets/fonts/manrope-v13-latin-300.woff2') format('woff2'), /* Super Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-300.woff') format('woff'), /* Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */ url('~@/assets/fonts/manrope-v13-latin-300.svg#Manrope') format('svg');
+  /* Legacy iOS */
+}
+/* manrope-600 - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  src: url('~@/assets/fonts/manrope-v13-latin-600.eot');
+  /* IE9 Compat Modes */
+  src: local(''), url('~@/assets/fonts/manrope-v13-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('~@/assets/fonts/manrope-v13-latin-600.woff2') format('woff2'), /* Super Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-600.woff') format('woff'), /* Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */ url('~@/assets/fonts/manrope-v13-latin-600.svg#Manrope') format('svg');
+  /* Legacy iOS */
+}
+/* manrope-800 - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  src: url('~@/assets/fonts/manrope-v13-latin-800.eot');
+  /* IE9 Compat Modes */
+  src: local(''), url('~@/assets/fonts/manrope-v13-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('~@/assets/fonts/manrope-v13-latin-800.woff2') format('woff2'), /* Super Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-800.woff') format('woff'), /* Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */ url('~@/assets/fonts/manrope-v13-latin-800.svg#Manrope') format('svg');
+  /* Legacy iOS */
+}
+/* manrope-700 - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: url('~@/assets/fonts/manrope-v13-latin-700.eot');
+  /* IE9 Compat Modes */
+  src: local(''), url('~@/assets/fonts/manrope-v13-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('~@/assets/fonts/manrope-v13-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-700.woff') format('woff'), /* Modern Browsers */ url('~@/assets/fonts/manrope-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('~@/assets/fonts/manrope-v13-latin-700.svg#Manrope') format('svg');
+  /* Legacy iOS */
+}
+/* NanumSquare Light */
+@font-face {
+  font-family: 'Nanum Square';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('NanumSquare Light'), url('~@/assets/fonts/NanumSquareL.woff') format('woff');
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+}
+/* NanumSquare Regular */
+@font-face {
+  font-family: 'Nanum Square';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('NanumSquare Regular'), local('NanumSquare'), url('~@/assets/fonts/NanumSquareR.woff') format('woff');
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+}
+/* NanumSquare Bold */
+@font-face {
+  font-family: 'Nanum Square';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('NanumSquare Bold'), url('~@/assets/fonts/NanumSquareB.woff') format('woff');
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+}
+/* NanumSquare ExtraBold */
+@font-face {
+  font-family: 'Nanum Square';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('NanumSquare ExtraBold'), url('~@/assets/fonts/NanumSquareEB.woff') format('woff');
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+}
+html {
+  background-color: #fafafa;
+  min-height: 100vh;
+  height: auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nanum Square', 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fafafa;
+  min-width: 900px;
+  min-height: calc(100vh - 80px);
+}
+img {
+  max-width: 100%;
+  height: auto !important;
+}
+.flex-container {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+}
+.section-title {
+  font-size: 21px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  line-height: 30px;
+}
+.separator {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border: 1px dashed #eee;
+}
+.oj-captcha {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 36px;
+}
+.oj-captcha .oj-captcha-code {
+  flex: auto;
+}
+.oj-captcha .oj-captcha-img {
+  margin-left: 10px;
+  padding: 3px;
+  flex: initial;
+}
+.oj-relative {
+  position: relative;
+}
+a.emphasis {
+  color: #495060;
+}
+a.emphasis:hover {
+  color: #F4815A;
+}
+.MathJax {
+  outline: 0;
+}
+.MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  color: #111111;
+  font-weight: 400;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5 {
+  margin-bottom: 15px;
+  padding: 0;
+}
+.markdown-body h1 {
+  font-size: 28px;
+}
+.markdown-body h2 {
+  font-size: 24px;
+}
+.markdown-body h3 {
+  font-size: 20px;
+}
+.markdown-body h4 {
+  font-size: 18px;
+}
+.markdown-body h5 {
+  font-size: 14px;
+}
+.markdown-body a {
+  color: #0099ff;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin: 10px 20px;
+}
+.markdown-body ul {
+  list-style-type: disc;
+}
+.markdown-body ol {
+  list-style-type: decimal;
+}
+.markdown-body li {
+  line-height: 24px;
+}
+.markdown-body li ul,
+.markdown-body li ul {
+  margin-left: 24px;
+}
+.markdown-body p,
+.markdown-body ul,
+.markdown-body ol {
+  font-size: 16px;
+  line-height: 24px;
+}
+.markdown-body pre {
+  padding: 5px 10px;
+  white-space: pre-wrap;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: #f8f8f9;
+  border: 1px dashed #e9eaec;
+}
+.markdown-body code {
+  font-size: 90%;
+  padding: 2px 5px;
+  margin: 0;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+  line-height: 1.5;
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body aside {
+  display: block;
+  float: right;
+  width: 390px;
+}
+.markdown-body blockquote {
+  border-left: 3px solid #bbbec4;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #7b7b7b;
+}
+.markdown-body hr {
+  width: 540px;
+  text-align: left;
+  margin: 0 auto 0 0;
+  color: #999;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  margin: 1em 1em;
+  border: 1px solid #ccc;
+}
+.markdown-body table thead {
+  background-color: #eee;
+}
+.markdown-body table thead td {
+  color: #666;
+}
+.markdown-body table td {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+}
+.CodeMirror-overlayscroll-horizontal div,
+.CodeMirror-overlayscroll-vertical div {
+  background: #bdbdbd !important;
+  margin-right: 5px;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(0, 50px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+  body {
+    min-width: 100vw;
+  }
+}

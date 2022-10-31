@@ -2,17 +2,7 @@
   <div v-if="listVisible" class="home_container">
 
     <div class="img_container" style="width: 100%;">
-        <Carousel autoplay v-model="value1" loop arrow="hover" @on-change="handleChange">
-            <CarouselItem>
-                <div class="demo-carousel">
-                  <img src="../../../../assets/main01.png" />
-                </div>
-            </CarouselItem>
-            <CarouselItem>
-                <div class="demo-carousel">
-                  <img src="../../../../assets/main01.png" />
-                </div>
-            </CarouselItem>
+        <Carousel v-model="value1" loop arrow="hover" @on-change="handleChange"> <!--autoplay-->
             <CarouselItem>
                 <div class="demo-carousel">
                   3
@@ -31,7 +21,7 @@
             <li v-for="(tab, index) in tabs" :key="index" class="tab-item" @click="currentTab = index" :class="{ active: currentTab===index }">
               <p>{{tab}}</p>
             </li>
-            <Dropdown v-show="currentTab == 1" @on-click="onStatusChange" :transfer="true" class="contest-status-list" trigger="click">
+            <!-- <Dropdown v-show="currentTab == 1" @on-click="onStatusChange" :transfer="true" class="contest-status-list" trigger="click">
                 <span>{{contest_stat === '' ? this.$i18n.t('m.Status') : this.$i18n.t('m.' + CONTEST_STATUS_REVERSE[contest_stat].name.replace(/ /g,"_"))}}
                 </span>
                 <Icon type="ios-arrow-down" />
@@ -40,7 +30,7 @@
                   <Dropdown-item name="0">진행 중인 대회</Dropdown-item>
                   <Dropdown-item name="1">개최 예정인 대회</Dropdown-item>
                 </Dropdown-menu>
-              </Dropdown>
+              </Dropdown> -->
             <div class="plus" @click="addPage"><Icon type="ios-arrow-forward" size="40"/></div>
           </ul>
           
@@ -64,7 +54,7 @@
             <!-- 대회일정 탭-->
             <div v-show="currentTab == 1">
               <div v-if="!contests.length" class="no_contest">
-                대회일정이 없습니다
+                재래시장 정보가 없습니다
               </div>
               <div class="contest_title" v-for="(contest, contest_idx) in contests" :key="contest_idx" @click="goContest">
                 <div v-if="contest.status == '1'">
@@ -96,9 +86,8 @@
           </div>
 
         </div>
-        <div class="right_rankings">
+        <!-- <div class="right_rankings">
           <table>
-            <!-- 제목 -->
             <thead>
               <tr class="ranking_title">
                 <td>순위</td>
@@ -106,7 +95,6 @@
                 <td>점수</td>
               </tr>
             </thead>
-            <!-- 내용 -->
             <tbody class="rankings_user" v-for="(data, index) in dataRank" :key="data.user.username" @click="goUser(data.user)">
               <tr v-if="index == 0" class="ranker first">
                 <td class="image">
@@ -150,7 +138,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
       </div>
       <div class="problem-category-container">
         <ProblemCategory></ProblemCategory>
