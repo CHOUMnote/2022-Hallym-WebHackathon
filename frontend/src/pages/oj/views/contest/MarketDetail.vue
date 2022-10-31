@@ -14,6 +14,26 @@
           <img src="../../../../assets/춘천중앙시장.jpg" alt="">
           {{market_list[0].descrition}}
         </div>
+        <p class="title">평점</p>
+        <div class="review">
+          <div class="item" v-for="item in review_list">
+            닉네임: {{item.username}}
+            {{item.avatar}}
+            내용: {{item.content}}
+            별점: {{item.star}}
+            작성시간: {{item.create_time}}
+          </div>
+        </div>
+        <input type="text" class="content" placeholder="자유롭게 의견을 남겨주세요" v-model="this.content" style="margin-top: 20px; width:100%;height:200px;font-size:16px;">
+        <select v-model="star" name="" id="">
+          <option value="" selected>평점</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+        <input type="button" value="제출" @click="createReview(this.content, $route.name, this.star)">
       </div>
       <div class="right_container">
         <div class="tags">
@@ -231,6 +251,7 @@
 
 <script>
 /* eslint-disable */
+import api from "../../api";
 import KakaoMap from "../../components/KakaoMap.vue";
 
 export default {
@@ -297,7 +318,11 @@ export default {
           tag: '#쇼핑 #재래시장 #반찬',
           address: '강원 춘천시 중앙로 83'
         }
-      ]
+      ],
+      content: '',
+      articleId: '',
+      star: '',
+      review_list: []
     }
   },
   mounted () {
@@ -311,8 +336,18 @@ export default {
       center: new kakao.maps.LatLng(33.450701, 126.570667),
       level: 3
     };
+    api.getReviewList($route.name).then(resp => {
+      this.review_list = resp.data.data
+    }, () => {
+    })
 
     var map = new kakao.maps.Map(container, options)
+  },
+  methods: {
+    createReview(content, id, star) {
+      console.log(this.content, this.star);
+      api.createReview(content, id, star)
+    }
   }
 }
 </script>
@@ -343,6 +378,11 @@ export default {
         padding: 5px;
         font-size: 20px;
         font-weight: 800;
+      }
+      select, input {
+        float: right;
+        width: 60px;
+        height: 30px;
       }
       img {
         margin: 20px auto;
