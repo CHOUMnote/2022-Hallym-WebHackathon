@@ -44,8 +44,9 @@ services:
       - judger_debug=1
   
   oj-backend:
-    image: kdonggyun97/cou-coding-platform-dev:latest
-    container_name: cou-coding-platform-dev
+    #  docker pull rlawlgh001028/hallym-hackathon22:0.1.0
+    image: rlawlgh001028/hallym-hackathon22:0.1.0
+    container_name: hallym-hackathon22
     restart: always
     depends_on:
       - oj-redis
@@ -53,7 +54,7 @@ services:
       - judge-server
     volumes:
       - ./data/backend:/data
-      # - ./frontend/dist:/app/dist # 개발시 frontend에서 build 후 주석 해제한 뒤 compose
+      #- ./frontend/dist:/app/dist # 개발시 frontend에서 build 후 주석 해제한 뒤 compose
     environment:
       - POSTGRES_DB=onlinejudge
       - POSTGRES_USER=onlinejudge

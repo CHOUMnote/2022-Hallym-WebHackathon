@@ -2,12 +2,12 @@
   <div id="header" >
     <!-- <transition name="fadenav"> -->
     <Menu v-if="screenWidth > 900" :style="{visibility: screenWidth > 900 ? 'visible' : 'hidden'}" theme="light" :mode="hMode" @on-select="handleRoute" :active-name="activeMenu" class="oj-menu">
-      <Menu-item class="home_bar" name="/" ><router-link to="/">COU</router-link></Menu-item>
-      <Menu-item class="bar_list" name="/problem">
+      <Menu-item class="home_bar" name="/" ><router-link to="/">춘천재래시장</router-link></Menu-item>
+      <!-- <Menu-item class="bar_list" name="/problem">
         <router-link to="/problem">문제</router-link>
-      </Menu-item>
+      </Menu-item> -->
       <Menu-item class="bar_list" name="/contest">
-        <router-link to="/contest">대회</router-link>
+        <router-link to="/contest">재래시장</router-link>
       </Menu-item>
       <Submenu class="bar_list" name="/info">
         <template slot="title">
@@ -22,15 +22,15 @@
         <template slot="title">
           커뮤니티
         </template>
-          <MenuItem name="/article-list?boardtype=0"><router-link to="/article-list?boardtype=0">전체 게시판</router-link></MenuItem>
+          <!-- <MenuItem name="/article-list?boardtype=0"><router-link to="/article-list?boardtype=0">전체 게시판</router-link></MenuItem> -->
           <MenuItem name="/article-list?boardtype=1"><router-link to="/article-list?boardtype=1">자유 게시판</router-link></MenuItem>
           <MenuItem name="/article-list?boardtype=2"><router-link to="/article-list?boardtype=2">질문 게시판</router-link></MenuItem>
-          <MenuItem name="/article-list?boardtype=3"><router-link to="/article-list?boardtype=3">요청 게시판</router-link></MenuItem>
+          <!-- <MenuItem name="/article-list?boardtype=3"><router-link to="/article-list?boardtype=3">요청 게시판</router-link></MenuItem> -->
       </Submenu>
-      <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/status">
-        <!-- <Icon type="ios-pulse-strong"></Icon> -->
+      <!-- <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/status">
+      <Icon type="ios-pulse-strong">
        <router-link to="/status">{{$t('m.NavStatus')}}</router-link>
-      </Menu-item>
+      </Menu-item> -->
       <template v-if="!isAuthenticated">
         <div class="login_menu">
           <Button type="text"
@@ -115,7 +115,7 @@
                 <div class="name">{{ user.username }}</div>
                 <div class="email">{{ user.email || 'Unlocked Account' }}</div>
               </div>
-              <div class="mypage_btn" @click="goMySettingPage">계정관리</div>
+              <!-- <div class="mypage_btn" @click="goMySettingPage">계정관리</div> -->
               <div class="line"></div>
               <div class="logout_btn" @click="goLogOut">로그아웃</div>
             </div>

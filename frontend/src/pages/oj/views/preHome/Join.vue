@@ -29,7 +29,7 @@
             <Input class ="login_input" type="password" v-model="formRegister.passwordAgain" placeholder="비밀번호를 다시 한 번 입력해주세요" size="large" @on-enter="handleRegister">
             </Input>
           </FormItem>
-          <FormItem prop="email">
+          <!-- <FormItem prop="email">
             <p class="form_title">이메일</p>
             <Input v-if="!authModal && !isAuthed" class ="login_input" type="email" v-model="formRegister.email" placeholder="이메일을 입력해주세요" size="large" @on-enter="handleRegister">
             </Input>
@@ -57,7 +57,7 @@
               </div>
               <Button class="auth-btn" type="primary" @click="authEmail">인증확인</Button>
             </div>
-          </transition>
+          </transition> -->
           <FormItem prop="captcha">
             <p class="form_title">Captcha</p>
             <div class="oj-captcha">
@@ -104,11 +104,11 @@
       this.getCaptchaSrc()
     },
     data () {
-      const regExp = /(?=^.{4,20}$)^[a-z]+[a-z0-9]$/
+      const regExp = /(?=^.{3,20}$)^[a-z]+[a-z0-9]$/
       const blockAdminRegExp = /^(admin|user|root|gm|unknownuser|help)/i
       const passregex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/
       const CheckUsernameNotExist = (rule, value, callback) => {
-        if (!regExp.test(value)) {
+        if (regExp.test(value)) {
           callback(new Error('4 ~ 20자리 소문자 + 숫자 조합만 가능합니다'))
         } else if (blockAdminRegExp.test(value)) {
           callback(new Error('생성할 수 없는 이름입니다'))
@@ -123,15 +123,16 @@
           callback()
         }
       }
-      const CheckEmailNotExist = (rule, value, callback) => {
-        api.checkUsernameOrEmail(undefined, value).then(res => {
-          if (res.data.data.email === true) {
-            callback(new Error(this.$i18n.t('m.The_email_already_exists')))
-          } else {
-            callback()
-          }
-        }, _ => callback())
-      }
+      // const CheckEmailNotExist = (rule, value, callback) => {
+      //   api.checkUsernameOrEmail(undefined, value).then(res => {
+      //     callback()
+      //     // if (rfalse) {
+      //     //   callback(new Error(this.$i18n.t('m.The_email_already_exists')))
+      //     // } else {
+      //     //   callback()
+      //     // }
+      //   }, _ => callback())
+      // }
       const CheckPassword = (rule, value, callback) => {
         if (this.formRegister.password !== '') {
           console.log(value)
@@ -160,13 +161,13 @@
         authButton: false,
         authButtonLoading: false,
         authModal: false,
-        isAuthed: false,
+        isAuthed: true,
         showpassword: false,
         formRegister: {
           username: '',
           password: '',
           passwordAgain: '',
-          email: '',
+          email: Math.floor((Math.random() * 1000)) + '@nav.com',
           captcha: ''
         },
         ruleRegister: {
@@ -175,8 +176,8 @@
             {validator: CheckUsernameNotExist, trigger: 'blur'}
           ],
           email: [
-            {required: true, type: 'email', trigger: 'blur', message: '이메일을 입력해주세요'},
-            {validator: CheckEmailNotExist, trigger: 'blur', message: '이미 사용 된 이메일입니다'}
+            {required: false, type: 'email', trigger: 'blur', message: '이메일을 입력해주세요'},
+            {validator: true, trigger: 'blur', message: '이미 사용 된 이메일입니다'}
           ],
           password: [
             {required: true, trigger: 'blur', message: '8~20자 사이로 입력해주세요', min: 8, max: 20},
@@ -202,7 +203,7 @@
       },
       handleRegister () {
         if (!this.isAuthed) {
-          this.$error('이메일 인증을 진행해주세요.')
+          console.log('이메일 인증')
         } else {
           this.validateForm('formRegister').then(valid => {
             let formData = Object.assign({}, this.formRegister)
@@ -407,7 +408,7 @@
   border-radius: @size-border-radius;
   padding: 20px;
   width: 40vw;
-  height: 800px;  // 소수점으로 떨어지는 높이를 730px로 고정
+  height: 700px;  // 소수점으로 떨어지는 높이를 730px로 고정
   max-width: 500px;
   min-width: 350px; // width가 강제적으로 줄어드는걸 방지
   margin-top: 60px;
