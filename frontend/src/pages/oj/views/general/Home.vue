@@ -5,7 +5,7 @@
         <Carousel v-model="value1" loop arrow="hover" @on-change="handleChange"> <!--autoplay-->
             <CarouselItem>
                 <div class="demo-carousel">
-                  3
+                  <img src="../../../../assets/춘천중앙시장.jpg" alt="" style="object-fit: contain;" width="100%">
                 </div>
             </CarouselItem>
             <CarouselItem>
@@ -140,9 +140,22 @@
           </table>
         </div> -->
       </div>
-      <div class="problem-category-container">
-        <ProblemCategory></ProblemCategory>
+      <div class="market_line">
+
       </div>
+      <div class="market_list">
+        <div v-for="item in market_list" :key="item" class="market_item">
+          <img src="../../..//../assets/춘천중앙시장.jpg" alt="">
+          <div class="description">
+            <span class="name">{{item.name}}</span>
+            <span class="like">좋아요: {{item.like}}</span>
+          </div>
+          
+        </div>
+      </div>
+      <!-- <div class="problem-category-container">
+        <ProblemCategory></ProblemCategory>
+      </div> -->
     </div>
 
   </div>
@@ -199,8 +212,17 @@
           rule_type: ''
         },
         currentTab: 0,
-        tabs: ['공지사항', '대회일정'],
-        CONTEST_STATUS_REVERSE: CONTEST_STATUS_REVERSE
+        tabs: ['공지사항'],
+        CONTEST_STATUS_REVERSE: CONTEST_STATUS_REVERSE,
+        market_list: [
+          {name: '춘천중앙시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
+          {name: '춘천풍물시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
+          {name: '춘천남부시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
+          {name: '제일종합시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
+          {name: '동부시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
+          {name: '제일시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
+          {name: '번개시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50}
+        ]
       }
     },
     mounted () {
@@ -457,7 +479,7 @@
   .main_container{
     display: block;
     margin: 50px 0 0 0;
-    padding: 0 20%;
+    //padding: 0 10%;
     width: 100%;
     // height: 100vh;
   }
@@ -466,14 +488,17 @@
     display: flex;
     // margin: 10px 0 0 0;
     // padding: 0 20%;
-    width: 100%;
+    width: 90%;
+    justify-content: center;
     height: auto;
     flex-wrap: wrap;
+    margin: 0 auto;
     margin-bottom: 20px;
     // background: #506b9e;
   }
 
   .left_announcement{
+    margin: 0 auto;
     display: inline-block;
     vertical-align: top;
     width: calc(~"60% - 30px");
@@ -495,8 +520,8 @@
       li.tab-item {
         margin-right: 10px;
         padding: 10px 24px;
-        border-radius: 25px;
-        font-size: 18px;
+        border-radius: 5px;
+        font-size: 24px;
         font-weight: @weight-bold;
         background-color: @light-gray;
         // transition: all 0.2s ease-in-out;
@@ -511,7 +536,7 @@
         }
         &.active {
           transition: all 0.3s ease-in;
-          background-color: @dark-orange;
+          background-color: #263A8C;
           p {
             color: @white;
           }
@@ -777,5 +802,44 @@
       }
     }
     
+  }
+</style>
+
+<style lang="less" scoped>
+  .market_line {
+    width: 100%;
+    height: 200px;
+    background-color: #F4815A;
+  }
+  .market_list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    //flex-grow: 1;
+    //flex-basis: auto;
+    width: 100%;
+    padding: 5%;
+    .market_item {
+      width: 30%;
+      padding-bottom: 30px;
+      & img:hover {
+        cursor: pointer;
+      }
+      &:hover &::after{
+        background-color: aqua;
+        cursor: pointer;
+      }
+      .description {
+        font-size: 20px;
+        &:hover .name{
+          color: #F4815A;
+          cursor: pointer;
+        }
+        .like {
+          float: right;
+        }
+      }
+
+    }
   }
 </style>
