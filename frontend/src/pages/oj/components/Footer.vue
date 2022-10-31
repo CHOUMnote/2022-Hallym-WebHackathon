@@ -1,8 +1,8 @@
 <template>
   <footer>
     <div>
-      <p v-html="website.website_footer"></p>
-      <p>Powered by <a href="https://github.com/OnlineJudgePlatformDev">COU</a>
+      <p>춘천재래시장 웹사이트</p>
+      <p>Powered by <a href="https://github.com/OnlineJudgePlatformDev">일석이조</a>
         <span v-if="version">&nbsp; Version: {{ version }}</span>
       </p>
     </div>

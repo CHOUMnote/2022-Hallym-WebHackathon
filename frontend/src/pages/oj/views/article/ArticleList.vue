@@ -14,11 +14,11 @@
                 자유 게시판
               </div>
             </div>
-            <div class="community_menu_element" @click="handleTypeChange('2')">
+            <!-- <div class="community_menu_element" @click="handleTypeChange('2')">
               <div class="community_menu_list" v-bind:style="[this.formFilter.boardtype === '2' ?{'color' : '#F5A547'}:{}]">
                 질문 게시판
               </div>
-            </div>
+            </div> -->
             <!-- <div class="community_menu_element" @click="handleTypeChange('3')">
               <div class="community_menu_list" v-bind:style="[this.formFilter.boardtype === '3' ?{'color' : '#F5A547'}:{}]">
                 요청 게시판

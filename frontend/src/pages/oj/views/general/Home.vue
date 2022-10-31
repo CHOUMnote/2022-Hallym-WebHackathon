@@ -5,7 +5,7 @@
         <Carousel v-model="value1" loop arrow="hover" @on-change="handleChange"> <!--autoplay-->
             <CarouselItem>
                 <div class="demo-carousel">
-                  <img src="~@/assets/춘천중앙시장.png" alt="" style="object-fit: contain; ">
+                  <img src="../../../../assets/춘천번개시장.png" alt="" style="object-fit: contain; width: 100% ">
                 </div>
             </CarouselItem>
             <CarouselItem>
@@ -124,7 +124,7 @@
               <tr v-else-if="index == 3" class="ranker defa">
                 <td class="no">4</td>
                 <td class="name">{{data.user.username}}</td>
-                <td class="score">{{data.total_score * 1000}}</td>
+                <td class-="s-core">{{data.total_score * 1000}}</td>
               </tr>
               <tr v-else-if="index == 4" class="ranker defa">
                 <td class="no">5</td>
@@ -141,7 +141,7 @@
         </div> -->
       </div>
       <div class="market_line">
-
+        춘천재래시장
       </div>
       <div class="market_list">
         <div v-for="item in market_list" :key="item" class="market_item" @click="$router.push(item.url)">
@@ -810,6 +810,10 @@
     width: 100%;
     height: 200px;
     background-color: #F4815A;
+    color: #fff;
+    text-align: center;
+    line-height: 200px;
+    font-size: 36px;
   }
   .market_list {
     display: flex;

@@ -12,16 +12,19 @@
       <Menu-item class="bar_list" name="/announcement-list">
         <router-link to="/contest">공지사항</router-link>
       </Menu-item>
-      <Submenu class="bar_list" name="/community" trigger="click">
+      <Menu-item class="bar_list" name="/article-list">
+        <router-link to="/article-list?boardtype=1">자유게시판</router-link>
+      </Menu-item>
+      <!-- <Submenu class="bar_list" name="/community" trigger="click">
         <template slot="title">
           커뮤니티
-        </template>
-          <!-- <MenuItem name="/article-list?boardtype=0"><router-link to="/article-list?boardtype=0">전체 게시판</router-link></MenuItem> -->
-          <MenuItem name="/article-list?boardtype=1"><router-link to="/article-list?boardtype=1">자유 게시판</router-link></MenuItem>
-          <MenuItem name="/article-list?boardtype=2"><router-link to="/article-list?boardtype=2">질문 게시판</router-link></MenuItem>
-          <!-- <MenuItem name="/article-list?boardtype=3"><router-link to="/article-list?boardtype=3">요청 게시판</router-link></MenuItem> -->
+        </template> -->
+          <!-- <MenuItem name="/article-list?boardtype=0"><router-link to="/article-list?boardtype=0">전체 게시판</router-link></MenuItem>
+          <MenuItem name="/article-list?boardtype=1"><router-link to="/article-list?boardtype=1">자유 게시판</router-link></MenuItem> -->
+          <!-- <MenuItem name="/article-list?boardtype=2"><router-link to="/article-list?boardtype=2">질문 게시판</router-link></MenuItem> -->
+          <!-- <MenuItem name="/article-list?boardtype=3"><router-link to="/article-list?boardtype=3">요청 게시판</router-link></MenuItem>
       </Submenu>
-      <!-- <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/status">
+      <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/status">
       <Icon type="ios-pulse-strong">
        <router-link to="/status">{{$t('m.NavStatus')}}</router-link>
       </Menu-item> -->
