@@ -4,11 +4,11 @@
         <div class="community">
           <!--<div class="community_menu_name">커뮤니티</div>-->
           <div class="community_menu">
-            <div class="community_menu_element" @click="handleTypeChange('0')">
+            <!-- <div class="community_menu_element" @click="handleTypeChange('0')">
               <div class="community_menu_list" v-bind:style="[this.formFilter.boardtype === '' || this.formFilter.boardtype === '0' ?{'color' : '#F5A547'}:{}]" >
                 전체 게시판
               </div>
-            </div>
+            </div> -->
             <div class="community_menu_element" @click="handleTypeChange('1')">
               <div class="community_menu_list" v-bind:style="[this.formFilter.boardtype === '1' ?{'color' : '#F5A547'}:{}]">
                 자유 게시판
@@ -19,11 +19,11 @@
                 질문 게시판
               </div>
             </div>
-            <div class="community_menu_element" @click="handleTypeChange('3')">
+            <!-- <div class="community_menu_element" @click="handleTypeChange('3')">
               <div class="community_menu_list" v-bind:style="[this.formFilter.boardtype === '3' ?{'color' : '#F5A547'}:{}]">
                 요청 게시판
               </div>
-            </div>
+            </div> -->
           </div>
 
           <button type="button" id="add-new" @click="Create">+</button>
