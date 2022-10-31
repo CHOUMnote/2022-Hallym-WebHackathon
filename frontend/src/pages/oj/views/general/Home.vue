@@ -5,7 +5,7 @@
         <Carousel v-model="value1" loop arrow="hover" @on-change="handleChange"> <!--autoplay-->
             <CarouselItem>
                 <div class="demo-carousel">
-                  <img src="../../../../assets/춘천중앙시장.jpg" alt="" style="object-fit: contain; ">
+                  <img src="~@/assets/춘천중앙시장.png" alt="" style="object-fit: contain; ">
                 </div>
             </CarouselItem>
             <CarouselItem>
@@ -144,11 +144,11 @@
 
       </div>
       <div class="market_list">
-        <div v-for="item in market_list" :key="item" class="market_item">
-          <img src="../../..//../assets/춘천중앙시장.jpg" alt="">
+        <div v-for="item in market_list" :key="item" class="market_item" @click="$router.push(item.url)">
+          <img src="../../../../assets/춘천번개시장.png" alt="">
           <div class="description">
             <span class="name">{{item.name}}</span>
-            <span class="like">좋아요: {{item.like}}</span>
+            <span class="like">조회수: {{item.like}}</span>
           </div>
           
         </div>
@@ -215,13 +215,13 @@
         tabs: ['공지사항'],
         CONTEST_STATUS_REVERSE: CONTEST_STATUS_REVERSE,
         market_list: [
-          {name: '춘천중앙시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
-          {name: '춘천풍물시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
-          {name: '춘천남부시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
-          {name: '제일종합시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
-          {name: '동부시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
-          {name: '제일시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50},
-          {name: '번개시장', photo: '../../../../assets/춘천중앙시장.jpg', like: 50}
+          {name: '춘천중앙시장', photo: '~@/assets/춘천중앙시장.png', like: 50, url: '/market/1'},
+          {name: '춘천풍물시장', photo: '~@/assets/춘천풍물시장.png', like: 50, url: '/market/2'},
+          {name: '춘천남부시장', photo: '~@/assets/춘천남부시장.png', like: 50, url: '/market/3'},
+          {name: '제일종합시장', photo: '~@/assets/춘천제일종합시장.png', like: 50, url: '/market/4'},
+          {name: '동부시장', photo: '~@/assets/춘천동부시장.png', like: 50, url: '/market/5'},
+          {name: '제일시장', photo: '~@/assets/춘천제일시장.png', like: 50, url: '/market/6'},
+          {name: '번개시장', photo: '~@/assets/춘천번개시장.png', like: 50, url: '/market/7'}
         ]
       }
     },

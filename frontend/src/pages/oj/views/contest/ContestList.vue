@@ -14,7 +14,7 @@
           <div>
             <div style="display:flex;">
               <div class="trophy">
-                <img :src="market.img" />
+                <img src="../../../../assets/춘천중앙시장.png" />
               </div>
               <div
                 class="contest-main"
@@ -145,7 +145,7 @@ export default {
         {
         title: "춘천중앙시장",
         description: "이것은 설명글입니다.",
-        img: "",
+        img: "~@/assets/춘천중앙시장.png",
         url: "/market/1",
         },
         {
