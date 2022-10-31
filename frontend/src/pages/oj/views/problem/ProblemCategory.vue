@@ -1,7 +1,7 @@
 <template>
   <div class="category">
     <div class="title">
-      <p @click="goCategoryList">문제 카테고리</p>
+      <p @click="goCategoryList">재래시장</p>
     <div class="next" @click="goCategoryList"><Icon type="ios-arrow-forward" size="40"/></div>
     </div>
     <!-- <hr style="color: gray;"> -->
@@ -10,11 +10,12 @@
         <div class="item" v-for="category in problemCategoryList" :key="category.title" @click="goProblemList(category.id, category.title)">
           <h3>{{ category.title }}</h3>
           <!-- <Icon color="#858585" type="ios-arrow-forward" /> -->
+          <img src="../../../../assets/main01.jpg" width="100px" alt="">
           <div class="description" v-katex v-html="category.description"></div>
-          <div class="progress">
+          <!-- <div class="progress">
             <p class="percent">달성률: {{ category.percent }}%</p>
             <progress max="100" :value="category.percent"></progress>
-          </div>
+          </div> -->
           <!-- <div class="progress"><Progress :percent="category.percent" /></div> -->
         </div>
     </div>

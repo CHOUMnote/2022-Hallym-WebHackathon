@@ -3,113 +3,29 @@
     <div id="contest-card">
       <div style="display: block;">
         <div class="title">
-          {{ query.rule_type === "" ? "" : query.rule_type }}
-          {{ $t("m.Contests") }}
-        </div>
-        <div>
-          <ul class="filter">
-            <li class="list">
-              <Select
-                id="rule"
-                @on-change="onRuleChange"
-                :placeholder="$t('m.Rule')"
-              >
-                <!-- <span>{{query.rule_type === '' ? this.$i18n.t('m.Rule') : this.$i18n.t('m.' + query.rule_type)}}
-                  <Icon type="md-arrow-dropdown" />
-                </span> -->
-                <Option value="All">{{ $t("m.All") }}</Option>
-                <Option value="OI">{{ $t("m.OI") }}</Option>
-                <Option value="ACM">{{ $t("m.ACM") }}</Option>
-              </Select>
-            </li>
-            <li class="list">
-              <Select
-                id="status"
-                @on-change="onStatusChange"
-                :placeholder="$t('m.Status')"
-              >
-                <!-- <span>{{query.status === '' ? this.$i18n.t('m.Status') : this.$i18n.t('m.' + CONTEST_STATUS_REVERSE[query.status].name.replace(/ /g,"_"))}}
-                  <Icon type="md-arrow-dropdown" />
-                </span> -->
-                <Option value="All">모든 대회</Option>
-                <Option value="0">진행 중인 대회</Option>
-                <Option value="1">개최 예정인 대회</Option>
-                <Option value="-1">종료 된 대회</Option>
-              </Select>
-            </li>
-            <li>
-              <Input
-                id="keyword"
-                @on-search="changeRoute"
-                v-model="query.keyword"
-                search
-                placeholder="검색어를 입력하세요."
-              ></Input>
-            </li>
-          </ul>
+          재래시장
         </div>
       </div>
-      <p id="no-contest" v-if="contests.length == 0">
-        {{ $t("m.No_contest") }}
+      <p id="no-contest" v-if="markets.length == 0">
+        재래시장 데이터가 없습니다.
       </p>
       <ol id="contest-list">
-        <li class="entry" v-for="contest in contests" :key="contest.title">
+        <li class="entry" v-for="market in markets" :key="market.title">
           <div>
             <div style="display:flex;">
               <div class="trophy">
-                <img :src="contest.contest_title_img" />
+                <img :src="market.img" />
               </div>
               <div
                 class="contest-main"
                 style="display: flex; flex-direction: column; justify-content:space-between;"
               >
                 <p>
-                  <a class="contest-title" @click.stop="goContest(contest)">
-                    {{ contest.title }}
+                  <a class="contest-title" @click.stop="$router.push(market.url)">
+                    {{ market.title }}
                   </a>
-                  <template v-if="contest.contest_type != 'Public'">
-                    <Icon type="ios-locked-outline" size="20"></Icon>
-                  </template>
                 </p>
-                <div class="description" v-html="contest.description"></div>
-                <ul class="detail" style="display:flex;">
-                  <li>
-                    <Tag type="border" :checked="true">{{
-                      contest.start_time | localtime("YYYY-M-D HH:mm")
-                    }}</Tag>
-                  </li>
-                  <!-- <li>
-                  <Icon type="android-time" color="#3091f2"></Icon>
-                  {{getDuration(contest.start_time, contest.end_time)}}
-                </li> -->
-                  <li>
-                    <!-- <Button size="small" shape="circle" @click="onRuleChange(contest.rule_type)">
-                    {{contest.rule_type}}
-                  </Button> -->
-                    <Tag
-                      type="border"
-                      :checkable="checkRule(contest.rule_type)"
-                      @on-change="onRuleChange(contest.rule_type)"
-                    >
-                      {{ contest.rule_type }}</Tag
-                    >
-                  </li>
-                  <li>
-                    <Tag
-                      type="border"
-                      :color="CONTEST_STATUS_REVERSE[contest.status].color"
-                      >{{
-                        $t(
-                          "m." +
-                            CONTEST_STATUS_REVERSE[contest.status].name.replace(
-                              / /g,
-                              "_"
-                            )
-                        )
-                      }}</Tag
-                    >
-                  </li>
-                </ul>
+                <div class="description">{{ market.description }}</div>
               </div>
             </div>
           </div>
@@ -125,11 +41,11 @@
         @on-page-size-change="changeRoute"
       ></Pagination>
     </div>
-    <div id="user-ranking">
+    <!-- <div id="user-ranking">
       <div class="main">
         <div class="ranking-container">
           <table class="ranking-list">
-            <!-- 내용 -->
+            내용
             <tbody
               v-for="(data, index) in dataRank"
               @click="goUser(data.user)"
@@ -184,13 +100,13 @@
               </tr>
             </tbody>
           </table>
-          <!-- <Pagination :total="total" :page-size.sync="limit" :current.sync="page"
+          <Pagination :total="total" :page-size.sync="limit" :current.sync="page"
                       @on-change="getRankData" show-sizer
                       @on-page-size-change="getRankData(1)"
-                      style="margin: 20px 0 10px; display: flex; justify-content:center; float: none;"></Pagination> -->
+                      style="margin: 20px 0 10px; display: flex; justify-content:center; float: none;"></Pagination>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -225,6 +141,50 @@ export default {
       limit: limit,
       total: 0,
       rows: "",
+      markets: [
+        {
+        title: "춘천중앙시장",
+        description: "이것은 설명글입니다.",
+        img: "",
+        url: "/market/1",
+        },
+        {
+        title: "춘천풍물시장",
+        description: "이것은 설명글입니다.",
+        img: "",
+        url: "/market/2",
+        },
+        {
+        title: "춘천남부시장",
+        description: "이것은 설명글입니다.",
+        img: "",
+        url: "/market/3",
+        },
+        {
+        title: "제일종합시장",
+        description: "이것은 설명글입니다.",
+        img: "",
+        url: "/market/4",
+        },
+        {
+        title: "춘천동부시장",
+        description: "이것은 설명글입니다.",
+        img: "",
+        url: "/market/5",
+        },
+        {
+        title: "춘천제일시장",
+        description: "이것은 설명글입니다.",
+        img: "",
+        url: "/market/6",
+        },
+        {
+        title: "춘천번개시장",
+        description: "이것은 설명글입니다.",
+        img: "",
+        url: "/market/7",
+        },
+      ],
       contests: [],
       loadingTable: false,
       dataRank: [],
@@ -424,7 +384,7 @@ export default {
         color: @default-font-color;
         -webkit-text-stroke: 0.5px;
         &:hover {
-          color: @orange;
+          color: #F4815A;
           transition: color 0.3s ease-in-out;
         }
       }
@@ -487,7 +447,7 @@ export default {
     .name {
       cursor: pointer;
       &:hover {
-        color: @orange;
+        color: #F4815A;
         transition: color 0.3s ease-in-out;
       }
     }

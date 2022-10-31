@@ -6,18 +6,12 @@
       <!-- <Menu-item class="bar_list" name="/problem">
         <router-link to="/problem">문제</router-link>
       </Menu-item> -->
-      <Menu-item class="bar_list" name="/contest">
+      <Menu-item class="bar_list" name="/market">
         <router-link to="/contest">재래시장</router-link>
       </Menu-item>
-      <Submenu class="bar_list" name="/info">
-        <template slot="title">
-            정보
-        </template>
-          <MenuItem name="/announcement-list"><router-link to="/announcement-list">공지사항</router-link></MenuItem>
-          <MenuItem name="/help"><router-link to="/help">자주 묻는 질문</router-link></MenuItem>
-          <MenuItem name="/languages"><router-link to="/languages">언어별 도움말</router-link></MenuItem>
-          <MenuItem name="/acm-rank"><router-link to="/acm-rank">사용자 순위</router-link></MenuItem>
-      </Submenu>
+      <Menu-item class="bar_list" name="/announcement-list">
+        <router-link to="/contest">공지사항</router-link>
+      </Menu-item>
       <Submenu class="bar_list" name="/community" trigger="click">
         <template slot="title">
           커뮤니티
@@ -48,7 +42,7 @@
           <div class="alarm">
             <Badge dot v-if="init_notification_count > 0" class="alarm-box">
               <Button type="text" class="bell bells" size="large" @click="changeNoti" @mouseover.native="alarmHoverForActive" @mouseleave.native="alarmHoverForNoActive">
-                <i v-bind:class="AlarmHoverActive" style="padding-bottom:5px"></i>
+                <i v-bind:class="AlarmHoverActive" style="padding-bottom:5px; color:#fff"></i>
               </Button>
             </Badge>
             
@@ -99,7 +93,7 @@
               <i v-if="getAvatar" class="small-avatar-container">
                 <img :src="profile.avatar"/>
               </i>
-              <Icon v-else type="md-contact" size="30" color="#5030E5"/>
+              <Icon v-else type="md-contact" size="30" color="#fff"/>
             <span class="username">{{ user.username }}</span>
           </div>
           <div style="clear:both"></div>
@@ -128,12 +122,12 @@
     <!-- vertical navigation-bar -->
     <Menu :style="{visibility: screenWidth <= 900 ? 'visible' : 'hidden'}" theme="light" width="100%" :mode="vMode" @on-select="handleRoute" :active-name="activeMenu" class="oj-menu">
       <Menu-item class="home_bar" name="/ff" >
-        <div class="logo-name" @click="handleRoute('/')">COU</div>
+        <div class="logo-name" @click="handleRoute('/')">춘천재래시장</div>
       </Menu-item>
-      <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/problem">
+      <!-- <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/problem">
         문제
-      </Menu-item>
-      <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/contest">
+      </Menu-item> -->
+      <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/market">
         대회
       </Menu-item>
       <Submenu class="bar_list" :class="{'open': navOpen === true}" name="/info">
@@ -141,18 +135,18 @@
           정보
         </template>
           <MenuItem name="/announcement-list">공지사항</MenuItem>
-          <MenuItem name="/help">자주 묻는 질문</MenuItem>
-          <MenuItem name="/languages">언어별 도움말</MenuItem>
-          <MenuItem name="/acm-rank">사용자 순위</MenuItem>
+          <MenuItem name="/help">오시는 길</MenuItem>
+          <!-- <MenuItem name="/languages">언어별 도움말</MenuItem>
+          <MenuItem name="/acm-rank">사용자 순위</MenuItem> -->
       </Submenu>
       <Submenu class="bar_list" :class="{'open': navOpen === true}" name="/community">
         <template slot="title">
           커뮤니티
         </template>
-          <MenuItem name="/article-list?boardtype=0">전체 게시판</MenuItem>
+          <!-- <MenuItem name="/article-list?boardtype=0">전체 게시판</MenuItem> -->
           <MenuItem name="/article-list?boardtype=1">자유 게시판</MenuItem>
           <MenuItem name="/article-list?boardtype=2">질문 게시판</MenuItem>
-          <MenuItem name="/article-list?boardtype=3">요청 게시판</MenuItem>
+          <!-- <MenuItem name="/article-list?boardtype=3">요청 게시판</MenuItem> -->
       </Submenu>
       <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/status">
         <!-- <Icon type="ios-pulse-strong"></Icon> -->
@@ -161,9 +155,9 @@
       <Menu-item v-if="navOpen && !isAuthenticated" class="bar_list" :class="{'open': navOpen === true}" name="/login">
         로그인
       </Menu-item>
-      <Menu-item v-if="navOpen && isAuthenticated" class="bar_list" :class="{'open': navOpen === true}" name="/setting/mypage">
+      <!-- <Menu-item v-if="navOpen && isAuthenticated" class="bar_list" :class="{'open': navOpen === true}" name="/setting/mypage">
         마이페이지
-      </Menu-item>
+      </Menu-item> -->
       <Menu-item v-if="navOpen && isAuthenticated" class="bar_list" :class="{'open': navOpen === true}" name="/logout">
         로그아웃
       </Menu-item>
@@ -467,7 +461,7 @@
   }
   .bells {
     &.ivu-btn:hover {
-      border-color: #fff;
+      border-color: #263A8C;
     }
     &.ivu-btn:focus {
       border-color: transparent;
@@ -486,12 +480,12 @@
     height: 60px;
     width: 100%;
     z-index: 985;
-    background-color: #fff;
+    background-color: #263A8C;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
     .oj-menu {
       //background: #404040;
       position: relative;
-      background: @white;
+      background: #263A8C;
       z-index: 986;
     }
     .navbar_toggle-btn {
@@ -501,7 +495,7 @@
       right: 32px;
       top: 0;
       font-size: 24px;
-      color: @purple;
+      color: #F4815A;
       display: none;
       z-index: 988;
     }
@@ -513,21 +507,21 @@
       line-height: 60px;
     }
     .logo > span > a, .bar_list, a, .bar_list a {
-      color: @black;
+      color: @white;
       font-weight: @weight-regular;
       transition: all 0.2s ease-in-out;
       &:hover {
-        color: @purple;
+        color: #F4815A;
         & a {
-          color:@purple;
+          color:#F4815A;
         }
       }
     }
     .home_bar, .home_bar a {
-        color: @purple;
+        color: #F4815A;
         font-size: @font-medium;
         font-weight: @weight-bold;
-        -webkit-text-stroke: 1.5px;
+        //-webkit-text-stroke: 1.5px;
         .logo-name {
           width: fit-content;
           height: 32px;
@@ -573,7 +567,7 @@
     float: right;
     margin-right: 10px;
     .bell {
-      color: @purple;
+      color: #F4815A;
       font-size: 1.5em;
     }
   }
@@ -592,7 +586,7 @@
       font-weight: @weight-bold;
       &:hover {
         box-shadow: 0 1px 5px 0 rgba(90, 82, 128, 0.31);
-        color: @purple;
+        color: #F4815A;
       }
     }
   }
@@ -610,16 +604,15 @@
     .account_tab {
       &:hover {
         cursor: pointer;
-        border: 1.5px solid @purple;
+        border: 1.5px solid #F4815A;
       }
       float: right;
       line-height: 50%;
       height: 45px;
 
-      color: @purple;
-      font-weight: 600;
+      color: @white;
+      font-weight: 500;
       padding: 5px 7px 5px 5px;
-      border: 1.5px solid #fff;
       border-radius: @size-border-radius;
       -webkit-transition: all .2s ease-in;
       -moz-transition: all .2s ease-in;
@@ -645,7 +638,7 @@
       height: 340px;
       min-height: 300px;
       background-color: @white;
-      color: @black;
+      color: @white;
       box-shadow: 2px 5px 20px 2px rgba(90, 82, 128, 0.31);
 
       .profile {
@@ -655,7 +648,7 @@
         align-items: center;
         height: 150px;
         .name {
-          color: @purple;
+          color: #F4815A;
           font-size: @font-medium;
           font-weight: @weight-semi-bold;
         }
@@ -682,8 +675,8 @@
         transition: all .2s ease-in;
         &:hover {
           cursor: pointer;
-          border: 2px solid @purple;
-          background-color: @purple;
+          border: 2px solid #F4815A;
+          background-color: #F4815A;
           color: @white;
         }
       }
@@ -711,8 +704,8 @@
         transition: all .2s ease-in;
         &:hover {
           cursor: pointer;
-          border: 2px solid @purple;
-          background-color: @purple;
+          border: 2px solid #F4815A;
+          background-color: #F4815A;
           color: @white;
         }
       }
@@ -772,7 +765,7 @@
     max-height: 400px;
     width: 400px;
     background-color: @white;
-    color: @black;
+    color: @white;
     box-shadow: 2px 5px 20px 2px rgba(90, 82, 128, 0.31);
     .notifications-table {
       width: inherit;
@@ -825,7 +818,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: @orange;
+            background: @white;
 
             .icon {
               margin: auto;
@@ -835,7 +828,7 @@
         }
       }
       #notification-content {
-        color: @black;
+        color: @white;
       }
       #notification-type {
         -webkit-text-stroke: .3px;
@@ -860,7 +853,7 @@
         padding-right: 15px;
         -webkit-text-stroke: .3px;
         &:hover {
-          color: @purple;
+          color: #F4815A;
           transition: color .3s ease-in;
         }
       }
@@ -876,7 +869,7 @@
     text-align: center;
     font-size: 120%;
     -webkit-text-stroke: .2px;
-    color: @black;
+    color: @white;
   }
 
   @media screen and (min-width: 901px) {
@@ -895,7 +888,7 @@
     .home_bar {
       width: 100vw;
       height: 60px;
-      background-color: @white;
+      background-color: #263A8C;
       //  vertical nav일시 상단 전체가 커서가 되는 것을 방지
       &:hover {
         cursor: default;
@@ -909,12 +902,12 @@
       border: solid 1px @white;
       transition: all 2s ease-in;
       &:hover {
-        color: @purple;
-        border-bottom-color: @purple;
+        color: #F4815A;
+        border-bottom-color: #F4815A;
       }
       &:last-child {
         border-bottom: solid 2px;
-        border-bottom-color: @purple;
+        border-bottom-color: #F4815A;
       }
     }
     .bar_list.open {
@@ -967,19 +960,19 @@
     }
   }
   .bar_list .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
-    color: @purple;
+    color: #F4815A;
   }
   .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
-    color: @purple;
+    color: #F4815A;
   }
   .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item a {
     color: @default-font-color !important;
   }
   .ivu-menu-item .ivu-menu-item-active .ivu-menu-item-selected {
-    color: @purple !important;
+    color: #F4815A !important;
   }
   .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item-selected  a {
-    color: @purple !important;
+    color: #F4815A !important;
   }
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
     background: @pale-purple;

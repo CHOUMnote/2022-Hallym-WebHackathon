@@ -8,6 +8,20 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 axios.defaults.xsrfCookieName = 'csrftoken'
 
 export default {
+  createReview (content, articleid, star) {
+    return ajax('create_review', 'get', {
+      data: {
+        content,
+        articleid,
+        star
+      }
+    })
+  },
+  getReviewList (articleid) {
+    return ajax('review_list', 'get', {
+      articleid
+    })
+  },
   getInactiveTime () {
     return ajax('get_inactive_time', 'get')
   },
