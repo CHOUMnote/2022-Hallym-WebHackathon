@@ -3,7 +3,7 @@
     <div class="form">
       <Form ref="formRegister" :model="formRegister" :rules="ruleRegister">
         <!-- 회원가입 박스 title-->
-        <div class="join_title"><p @click="goHome">COU</p></div>
+        <div class="join_title"><p @click="goHome">춘천재래시장</p></div>
                 
         <div class = "join_edge">
           <FormItem prop="username">
@@ -423,7 +423,7 @@
   .auth_email_btn {
     margin-top: 5px;
     border: none;
-    background: @purple;
+    background: #F4815A;
     font-weight: bold;
     float:right;
     color: white
@@ -441,7 +441,7 @@
   font-size: @font-large;
   font-weight: @weight-bold;
   line-height: 50px;
-  color: @purple;
+  color: #F4815A;
   p {
     display:inline-block;
     cursor: pointer;
@@ -457,7 +457,7 @@
   .form_title {
     font-size: @font-micro;
     font-weight: bold;
-    color: @purple;
+    color: #F4815A;
   }
 }
 
@@ -486,7 +486,7 @@
   font-size: @font-small;
   font-weight: bold;
   &.primary {
-    background: @purple;
+    background: #F4815A;
   }
   &.second {
     background: @light-gray;

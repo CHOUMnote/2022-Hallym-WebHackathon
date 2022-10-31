@@ -4,7 +4,7 @@
       <div class="form">
         <Form ref="formLogin" :model="formLogin" :rules="ruleLogin">
           <!-- 로그인 박스 title-->
-          <div class="login_title"><p @click="goRoute('/')">COU</p></div>
+          <div class="login_title"><p @click="goRoute('/')">춘천재래시장</p></div>
                   
           <div class = "login_edge">
           <!-- 로그인 username textbox -->
