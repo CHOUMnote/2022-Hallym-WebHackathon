@@ -41,11 +41,11 @@
         @on-page-size-change="changeRoute"
       ></Pagination>
     </div>
-    <div id="user-ranking">
+    <!-- <div id="user-ranking">
       <div class="main">
         <div class="ranking-container">
           <table class="ranking-list">
-            <!-- 내용 -->
+            내용
             <tbody
               v-for="(data, index) in dataRank"
               @click="goUser(data.user)"
@@ -100,13 +100,13 @@
               </tr>
             </tbody>
           </table>
-          <!-- <Pagination :total="total" :page-size.sync="limit" :current.sync="page"
+          <Pagination :total="total" :page-size.sync="limit" :current.sync="page"
                       @on-change="getRankData" show-sizer
                       @on-page-size-change="getRankData(1)"
-                      style="margin: 20px 0 10px; display: flex; justify-content:center; float: none;"></Pagination> -->
+                      style="margin: 20px 0 10px; display: flex; justify-content:center; float: none;"></Pagination>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

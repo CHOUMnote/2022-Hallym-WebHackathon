@@ -5,7 +5,7 @@
         <Carousel v-model="value1" loop arrow="hover" @on-change="handleChange"> <!--autoplay-->
             <CarouselItem>
                 <div class="demo-carousel">
-                  <img src="../../../../assets/춘천중앙시장.jpg" alt="" style="object-fit: contain;" width="100%">
+                  <img src="../../../../assets/춘천중앙시장.jpg" alt="" style="object-fit: contain; ">
                 </div>
             </CarouselItem>
             <CarouselItem>

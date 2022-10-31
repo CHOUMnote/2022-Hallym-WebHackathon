@@ -9,15 +9,9 @@
       <Menu-item class="bar_list" name="/market">
         <router-link to="/contest">재래시장</router-link>
       </Menu-item>
-      <Submenu class="bar_list" name="/info">
-        <template slot="title">
-            정보
-        </template>
-          <MenuItem name="/announcement-list"><router-link to="/announcement-list">공지사항</router-link></MenuItem>
-          <MenuItem name="/help"><router-link to="/help">오시는 길</router-link></MenuItem>
-          <!-- <MenuItem name="/languages"><router-link to="/languages">언어별 도움말</router-link></MenuItem>
-          <MenuItem name="/acm-rank"><router-link to="/acm-rank">사용자 순위</router-link></MenuItem> -->
-      </Submenu>
+      <Menu-item class="bar_list" name="/announcement-list">
+        <router-link to="/contest">공지사항</router-link>
+      </Menu-item>
       <Submenu class="bar_list" name="/community" trigger="click">
         <template slot="title">
           커뮤니티

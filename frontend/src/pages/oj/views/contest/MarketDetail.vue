@@ -1,3 +1,4 @@
+
 <template>
 <div>
   <div v-if="$route.name=='market-1'" class="wrapper">
@@ -29,6 +30,7 @@
             </div>
           </div>
         </div>
+        <KakaoMap></KakaoMap>
       </div>
     </div>
   </div>
@@ -228,8 +230,14 @@
 </template>
 
 <script>
+/* eslint-disable */
+import KakaoMap from "../../components/KakaoMap.vue";
+
 export default {
   name: 'MarketDetail',
+  components: {
+    KakaoMap
+  },
   data () {
     return {
       market_list: [
@@ -291,6 +299,20 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    // 지도그리기
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = '//dapi.kakao.com/v2/maps/sdk.js?appkey=fe4d8746500baab5293f057a594f6653'
+    document.head.appendChild(script)
+    var container = document.getElementById('map')
+    var options = {
+      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      level: 3
+    };
+
+    var map = new kakao.maps.Map(container, options)
   }
 }
 </script>
