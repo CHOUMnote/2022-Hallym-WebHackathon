@@ -25,6 +25,7 @@ import {
 } from '../views'
 import Logout from '../views/user/Logout.vue'
 import StartLogin from '../views/preHome/Start_Login.vue'
+import MarketDetail from '../views/contest/MarketDetail.vue'
 
 import * as Contest from '@oj/views/contest'
 import * as Setting from '@oj/views/setting'
@@ -142,9 +143,44 @@ export default [
   },
   {
     name: 'contest-list',
-    path: '/contest',
+    path: '/market',
     meta: {title: 'Contest List'},
     component: Contest.ContestList
+  },
+  {
+    name: 'market-1',
+    path: '/market/1',
+    component: MarketDetail
+  },
+  {
+    name: 'market-2',
+    path: '/market/2',
+    component: MarketDetail
+  },
+  {
+    name: 'market-3',
+    path: '/market/3',
+    component: MarketDetail
+  },
+  {
+    name: 'market-4',
+    path: '/market/4',
+    component: MarketDetail
+  },
+  {
+    name: 'market-5',
+    path: '/market/5',
+    component: MarketDetail
+  },
+  {
+    name: 'market-6',
+    path: '/market/6',
+    component: MarketDetail
+  },
+  {
+    name: 'market-7',
+    path: '/market/7',
+    component: MarketDetail
   },
   {
     name: 'contest-details',

@@ -6,7 +6,7 @@
       <!-- <Menu-item class="bar_list" name="/problem">
         <router-link to="/problem">문제</router-link>
       </Menu-item> -->
-      <Menu-item class="bar_list" name="/contest">
+      <Menu-item class="bar_list" name="/market">
         <router-link to="/contest">재래시장</router-link>
       </Menu-item>
       <Submenu class="bar_list" name="/info">
@@ -133,7 +133,7 @@
       <!-- <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/problem">
         문제
       </Menu-item> -->
-      <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/contest">
+      <Menu-item class="bar_list" :class="{'open': navOpen === true}" name="/market">
         대회
       </Menu-item>
       <Submenu class="bar_list" :class="{'open': navOpen === true}" name="/info">
